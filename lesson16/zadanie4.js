@@ -1,9 +1,12 @@
-const sum= function(a){
-    return function(b){
-        return function(c){
-            return a+b+c;
-        }
+
+
+function sum(a) {
+    const innerSunm = function (b) {
+        a += b;
+        console.log(a);
+        return innerSunm;
     }
+    return innerSunm;
 }
-x=sum(2)(5)(10);
-alert(x);
+const result = sum(2)(5)(10)(15);
+console.log(result());
