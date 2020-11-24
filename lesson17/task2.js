@@ -1,16 +1,19 @@
 let arr1 = [];
-for (let i = 0; i <= 6; i++) {
-    let a=0;
-    a=Math.random() * (10 - 0 + 1)+0;
-    a= a.toFixed(2);
-    arr1.push(a);  
+var randArr = function (min, max) {
+    let a;
+    for (let i = 0; i <= 7; i++) {
+        a = Math.floor(Math.random() * (max - min + 1) + min);
+        if (arr1.includes(a)) {
+            do {
+                a = Math.floor(Math.random() * (max - min + 1) + min);
+            } while (arr1.includes(a));
+        }
+        arr1.push(a);
 
+    }
+    return arr1;
 }
-for (n of arr1) {       
-   if (!arr1.includes(n)){
-       arr2.push(n);
-   }
-}
-console.log(arr1);
-arr1.sort( (a, b) => a - b );
-console.log(arr1);
+var constRand = randArr(0, 10);
+console.log(constRand);
+constRand.sort((a, b) => a - b);
+console.log(constRand);
