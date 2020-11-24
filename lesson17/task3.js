@@ -11,9 +11,10 @@ randArr2(0, 100);
 a.forEach(Element => {
     Element = Element.toString().split('').join('');
     Element = Element.replace('0', 'zero');
-       do{ Element = Element.replace('0', 'zero');
-    }while(Element.includes(0));
-        if (!Element.includes('zero')) {
+    do {
+        Element = Element.replace('0', 'zero');
+    } while (Element.includes(0));
+    if (!Element.includes('zero')) {
         Element = parseInt(Element);
     }
     b.push(Element);
