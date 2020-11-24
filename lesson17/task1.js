@@ -1,11 +1,8 @@
-var findPoly = function (firstWord) {
-    reverseWord = firstWord.split('');
-    reverseWord = reverseWord.reverse();
-    return reverseWord.join('');
+const findPoly = function (firstWord) {
+    return reverseWord = firstWord.split('').reverse().join('');
 }
-
-polyWord = '';
-var reverseWord = findPoly(polyWord);
+let polyWord = '';
+ reverseWord = findPoly(polyWord);
 console.log(polyWord);
 console.log(reverseWord);
 
