@@ -9,17 +9,13 @@ const randArr2 = function (min, max) {
 randArr2(0, 100);
 
 a.forEach(Element => {
-    Element = Element.toString();
+    Element = Element.toString().split('').join('');
     Element = Element.replace('0', 'zero');
-    b.push(Element);
-})
-b.forEach(Element => {
-    Element = Element.toString();
-    Element = Element.replace('0', 'zero');
-    if (!Element.includes('zero')) {
+       do{ Element = Element.replace('0', 'zero');
+    }while(Element.includes(0));
+        if (!Element.includes('zero')) {
         Element = parseInt(Element);
     }
-    c.push(Element);
-
-})
-console.log(c);
+    b.push(Element);
+});
+console.log(b);
