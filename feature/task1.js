@@ -4,11 +4,12 @@ const contDeep = Number(prompt('Введите длину контейнера �
 let pipeList = [];
 let count1 = 0;
 let pipeDiam = 0;
-let finalCapacity = 0;
+let pipeCapacity = 0;
+let lotPipe = [];
 let shortMess = {
         'В контейнер помещается': {}
 };
-let lotPipe = [];
+
 while (true) {
         pipeDiam = Number(prompt('введите диаметр трубы в метрах'));
         if (Boolean(pipeDiam) === true) {
@@ -21,27 +22,18 @@ while (true) {
 pipeList.sort((a, b) => a - b);
 pipeList = pipeList.reverse();
 let kontSquare = contHeight * contWidth;
-let initialCapacity = 0;
-const kontCapacity = function (capacity) {
-        initialCapacity = capacity;
-        return function (pipeDiam) {
-                let pipeSquare = Math.PI * pipeDiam ** 2 / 4;
-                lotPipe.push(Math.floor(initialCapacity / pipeSquare));
-                return Math.floor(initialCapacity / pipeSquare) * contDeep;
-        };
-}
-
-
-for (let countDiam = 0; countDiam < pipeList.length; countDiam++) {
-        if (countDiam === 0) {
-                finalCapacity = kontCapacity(kontSquare)(pipeList[countDiam]);
-                shortMess['В контейнер помещается'][`труба диаметром ${pipeList[countDiam]} м.`] = `${finalCapacity} метров`;
+for (let i = 0; i < pipeList.length; i++) {
+        var capacity = Math.PI * pipeList[i] ** 2 / 4;
+        if (i === 0) {
+                lotPipe.push(Math.floor(kontSquare / capacity));
+                pipeCapacity = Math.floor(kontSquare / capacity) * contDeep;
+                shortMess['В контейнер помещается'][`труба диаметром ${pipeList[i]} м.`] = `${pipeCapacity} метров`;
         } else {
-                capacity = Math.PI * pipeList[countDiam - 1] ** 2 / 4;
-
-                finalCapacity = kontCapacity(capacity)(pipeList[countDiam]) * lotPipe[countDiam - 1];
-                shortMess['В контейнер помещается'][`труба диаметром ${pipeList[countDiam]} м.`] = `${finalCapacity} метров`;
+                capacity = Math.PI * pipeList[i - 1] ** 2 / 4;
+                var pipeSquare = Math.PI * pipeList[i] ** 2 / 4;
+                lotPipe.push((Math.floor(capacity / pipeSquare)) * lotPipe[i - 1]);
+                pipeCapacity = (Math.floor(capacity / pipeSquare) * contDeep) * lotPipe[i - 1];
+                shortMess['В контейнер помещается'][`труба диаметром ${pipeList[i]} м.`] = `${pipeCapacity} метров`;
         }
 }
-
 console.log(shortMess);
