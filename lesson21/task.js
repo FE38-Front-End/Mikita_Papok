@@ -14,6 +14,29 @@ const up = document.getElementById('up');
 const down = document.getElementById('down');
 const left = document.getElementById('left');
 const right = document.getElementById('right');
+const VALUE_KEY = 'value';
+
+function getValue(name) {
+    return localStorage.getItem(name) || '';
+}
+
+inputSide.addEventListener("change", event => {
+    localStorage.setItem('inputSide', inputSide.value);
+});
+inputSide.value = getValue('inputSide');
+
+inputDiam.addEventListener("change",event=>{
+    localStorage.setItem('inputDiam',inputDiam.value);
+
+})
+inputDiam.value=getValue('inputDiam');
+
+inputStep.addEventListener("change",event=>{
+    localStorage.setItem('inputStep',inputStep.value);
+})
+inputStep.value=getValue('inputStep');
+
+
 sideInput.addEventListener('click', event => {
     side = Number(inputSide.value);
     const square = document.getElementsByClassName('border')[0];
@@ -27,7 +50,6 @@ sideInput.addEventListener('click', event => {
 diamInput.addEventListener('click', event => {
     diam = Number(inputDiam.value);
     diam = diam / 2;
-
     if (diam < side) {
         // const circle = document.getElementsByClassName('circle')[0];
         circle.getAttribute('style');
@@ -36,68 +58,80 @@ diamInput.addEventListener('click', event => {
         circle.style.border = `1px solid black`;
         circle.style.borderRadius = '100%';
         circle.style.transform = `translate(0)`;
-
-
     } else {
         alert('Размер круга не должен превышать размер квадрата')
     };
-
-
 })
+
 
 stepInput.addEventListener('click', event => {
     step = Number(inputStep.value);
-
 })
 
-
 up.addEventListener('click', event => {
+    down.disabled = false;
     let fringle = ((side / 2) - (diam / 2)) * (-1);
     initialY[0] -= step;
-    if (initialY >= fringle) {
+    if (initialY > fringle) {
         circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
-    } else {
-        initialY[0] += step;
-        up.preventDeafault;
+    } else if (initialY[0] < fringle) {
+        initialY[0] = fringle;
+        circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
+        up.disabled = true;
+    } else if (initialY[0] === fringle) {
+        circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
+        up.disabled = true;
     }
 })
 
 down.addEventListener('click', event => {
+    up.disabled = false;
     let fringle = ((side / 2) - (diam / 2));
-    let coordY = initialY[0];
-    coordY += step;
-    initialY[0] = coordY;
-    if (initialY <= fringle) {
+    initialY[0] += step;;
+    if (initialY[0] < fringle) {
         circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
-    } else {
-        initialY[0] -= step;
-        up.preventDeafault;
+        down.disabled = false;
+    } else if (initialY[0] > fringle) {
+        initialY[0] = fringle;
+        circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
+        down.disabled = true;
+    } else if (initialY[0] === fringle) {
+        circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
+        down.disabled = true;
     }
 })
 
 left.addEventListener('click', event => {
+    right.disabled = false;
     let fringle = ((side / 2) - (diam / 2)) * (-1);
     initialX[0] -= step;
-    if (initialX >= fringle) {
+    if (initialX > fringle) {
         circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
-    } else {
-        initialX[0] += step;
-        left.preventDeafault;
+    } else if (initialX[0] < fringle) {
+        initialX[0] = fringle;
+        circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
+        left.disabled = true;
+    } else if (initialX[0] === fringle) {
+        circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
+        left.disabled = true;
     }
-
 })
 
 right.addEventListener('click', event => {
+    left.disabled = false;
     let fringle = ((side / 2) - (diam / 2));
-    let coordX = initialX[0];
-    coordX += step;
-    initialX[0] = coordX;
-    if (initialX <= fringle) {
+    let coordY = initialX[0];
+    coordY += step;
+    initialX[0] = coordY;
+    if (initialX[0] < fringle) {
         circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
-    } else {
-        initialX[0] -= step;
-        up.preventDeafault;
+        down.disabled = false;
+    } else if (initialX[0] > fringle) {
+        initialX[0] = fringle;
+        circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
+        down.disabled = true;
+    } else if (initialX[0] === fringle) {
+        circle.style.transform = `translate(${initialX[0]}px,${initialY[0]}px)`;
+        right.disabled = true;
     }
-
-
 })
