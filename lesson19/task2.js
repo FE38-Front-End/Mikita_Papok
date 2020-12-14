@@ -1,5 +1,5 @@
 let nomberList = [];
-let n = Number(prompt('введите число'));
+const n = Number(prompt('введите число'));
 for (let i = 1; i <= n; i++) {
     nomberList.push(i);
 }
