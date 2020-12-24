@@ -25,8 +25,8 @@ const mr = document.getElementById('mr');
 const mc = document.getElementById('mc');
 const mPlus = document.getElementById('m-plus');
 const mMinus = document.getElementById('m-minus');
-const reverse=document.getElementById('reverse');
-const dot= document.getElementById('dot');
+const reverse = document.getElementById('reverse');
+const dot = document.getElementById('dot');
 let input = document.getElementsByTagName('input')[0];
 let tempEqual = 0;
 let tempEqualTwo = 0;
@@ -96,17 +96,7 @@ equal.addEventListener('click', event => {
     input.value = '';
     input.value += tempEqual;
 })
-// const operation=function(property){
-//     let begValue=input.value.split(' ');
-//     console.log(begValue);
-//     input.value='';
-//     let finValue= Math[property](begValue[begValue.length-1]);
-//     console.log(finValue);
-//     begValue.splice(begValue.length-1,1,`${finValue}`);
-//     begValue=begValue.join(' ');    
-//     input.value=begValue;   
-// }
-// sqrt.addEventListener('click',operation(sqrt))
+
 sqrt.addEventListener('click', event => {
     let begValue = input.value.split(' ');
     input.value = '';
@@ -185,7 +175,7 @@ mPlus.addEventListener('click', event => {
 
 })
 
-mMinus.addEventListener('click',event=>{
+mMinus.addEventListener('click', event => {
     let localValue = Number(localStorage.getItem('mmr'));
     localValue -= eval(input.value);
     console.log(localValue)
@@ -194,16 +184,16 @@ mMinus.addEventListener('click',event=>{
     localStorage.setItem('mmr', localValue)
 })
 
-reverse.addEventListener('click',event=>{
+reverse.addEventListener('click', event => {
     let begValue = input.value.split(' ');
     input.value = '';
     let shortCutLast = begValue[begValue.length - 1];
-    let finValue =shortCutLast*(-1);
+    let finValue = shortCutLast * (-1);
     begValue.splice(begValue.length - 1, 1, `${finValue}`);
     begValue = begValue.join(' ');
     input.value = begValue;
 })
 
-dot.addEventListener('click',event=>{
-    input.value+='.';
+dot.addEventListener('click', event => {
+    input.value += '.';
 })
