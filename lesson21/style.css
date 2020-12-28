@@ -12,6 +12,11 @@
     border: none;
 }
 
+.triangle-up {
+    display: block;
+    background: none;
+}
+
 .triangle-down {
     transform: rotate(180deg);
 }
@@ -28,10 +33,9 @@
     margin-left: 100px;
 }
 
-.input-diametr .input-step .input-side{
+.input-diametr .input-step .input-side {
     height: 10px;
     width: 200px;
-
 }
 
 .input-information-form__component:not(:first-child) {
@@ -45,7 +49,10 @@
     align-items: center;
     justify-content: center;
     margin-left: 100px;
+}
 
+.border-show {
+    border: 1px solid black;
 }
 
 .button-block {
@@ -53,20 +60,17 @@
     width: 100px;
     background: none;
     position: relative;
-
-
-
 }
 
-#right {
+.navigation-button__right {
     border: none;
     background: none;
     position: absolute;
-    right: -15%;
+    right: -15px;
     top: 35px;
 }
 
-#left {
+.navigation-button__left {
     border: none;
     background: none;
     position: absolute;
@@ -74,12 +78,12 @@
     top: 35%;
 }
 
-#up {
+.navigation-button__up {
     position: absolute;
     left: 25px;
 }
 
-#down {
+.navigation-button__down {
     position: absolute;
     left: 25px;
     bottom: 0;
@@ -89,4 +93,10 @@
     display: flex;
 
     align-items: center;
+}
+
+.circle-show {
+    border: 1px solid black;
+    border-radius: 100%;
+    transform: translate(0);
 }
