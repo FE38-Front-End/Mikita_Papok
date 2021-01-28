@@ -1,4 +1,4 @@
-function Car(name, model, year, color,  maxSpeed, fuelCapacity,  fuelConsumption) {
+function Car(name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption) {
     this.name = name;
     this.model = model;
     this.year = year;
@@ -61,15 +61,25 @@ const car = new Car({
 function extend(Child, Parent) {
     Child.prototype = Object.create(Parent.prototype);
     Child.prototype.constructor = Child;
-    Child.superclass = Parent.prototype; 
+    Child.superclass = Parent.prototype;
 }
+extend(Bmw, Car);
 
-
-function Bmw(name) {
-    Bmw.superclass.constructor.call(this, name);
+function Bmw(sunRoof) {
 
     this.sunRoof = sunRoof || 'true';
 
+}
+
+function Lexus(climatControl) {
+
+    this.climatControl = climatControl || 'true';
+
+}
+
+function Lincoln(airFreshener) {
+    Lincoln.superclass.constructor.call();
+    this.airFreshener = airFreshener || 'true';
 }
 
 
