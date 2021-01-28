@@ -1,4 +1,4 @@
-function Car(name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption) {
+function Car({name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption}) {
     this.name = name;
     this.model = model;
     this.year = year;
@@ -65,9 +65,9 @@ function extend(Child, Parent) {
 }
 extend(Bmw, Car);
 
-function Bmw(sunRoof) {
-
-    this.sunRoof = sunRoof || 'true';
+function Bmw(data) {
+    Bmw.superclass.constructor.call(this, data);
+    this.sunRoof = data.sunRoof || 'true';
 
 }
 
@@ -78,7 +78,7 @@ function Lexus(climatControl) {
 }
 
 function Lincoln(airFreshener) {
-    Lincoln.superclass.constructor.call();
+    Lincoln.superclass.constructor.call(this, );
     this.airFreshener = airFreshener || 'true';
 }
 
