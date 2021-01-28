@@ -66,8 +66,9 @@ function extend(Child, Parent) {
 extend(Bmw, Car);
 
 function Bmw(data) {
+    let {sunRoof}=data;
     Bmw.superclass.constructor.call(this, data);
-    this.sunRoof = data.sunRoof || 'true';
+    this.sunRoof = sunRoof || 'true';
 
 }
 
