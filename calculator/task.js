@@ -3,7 +3,17 @@ let tempEqual = 0;
 let tempEqualTwo = 0;
 const memoryBlock = document.querySelector('.calc-memory');
 
+function doubleSymbol(stmbol){
+    let info=input.value;
+    info=info.split(' ');
+    let infoData=info[info.length-1];
+    if(infoData.some(stmbol)){
+        return 1
+    }else{
+        return 0;
+    }
 
+}
 function putSome(num) {
     input.value += `${num}`;
 
