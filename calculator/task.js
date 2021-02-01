@@ -3,17 +3,43 @@ let tempEqual = 0;
 let tempEqualTwo = 0;
 const memoryBlock = document.querySelector('.calc-memory');
 
-function doubleSymbol(stmbol){
-    let info=input.value;
-    info=info.split(' ');
-    let infoData=info[info.length-1];
-    if(infoData.some(stmbol)){
-        return 1
-    }else{
+const operations = {
+    'plus': '+',
+    'minus': '-',
+    'div': '/',
+    'multiply': '*'
+}
+
+function doubleOperation(string) {
+    let operationsCount=0;
+    let begValue=string.split(' ');
+    let finValue=begValue[begValue.length-2]
+    console.log(finValue);
+    for (i in operations) {
+        if (finValue.indexOf(operations[i]) === -1) {
+            operationsCount-=1;
+        } else {
+            operationsCount+=1;
+        }
+
+    }
+    return operationsCount;
+
+}
+
+
+function doubleSymbol(stmbol) {
+    let info = input.value;
+    info = info.split(' ');
+    let infoData = info[info.length - 1];
+    if (infoData.indexOf(stmbol) === -1) {
         return 0;
+    } else {
+        return 1;
     }
 
 }
+
 function putSome(num) {
     input.value += `${num}`;
 
@@ -62,10 +88,13 @@ numPad.addEventListener('click', event => {
             putSome(` + `);
             break;
         case 'minus':
+            if(doubleOperation)
             putSome(` - `);
             break;
         case 'div':
-            putSome(` / `);
+            if(doubleOperation(input.value)===0){
+                putSome(` / `);
+            }
             break;
         case 'clean':
             input.value = '';
@@ -136,8 +165,11 @@ numPad.addEventListener('click', event => {
             input.value = begValue;
             break;
         case 'dot':
-            putSome('.');
+            if (doubleSymbol('.') !== 1) {
+                putSome('.');
+            }
             break;
+
         case 'ms':
             localStorage.setItem('mmr', eval(input.value));
             console.log(localStorage);
