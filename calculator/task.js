@@ -4,12 +4,7 @@ let tempEqualTwo = 0;
 let evalCount = 0;
 let curValue = 0;
 const memoryBlock = document.querySelector('.calc-memory');
-const operations = {
-    'plus': '+',
-    'minus': '-',
-    'div': '/',
-    'multiply': '*'
-}
+
 function doubleOperation(string, symbol) {
     let operationsCount = 0;
     let begValue = string.split('');
@@ -24,7 +19,6 @@ function doubleOperation(string, symbol) {
     }
     return operationsCount;
 }
-
 
 function doubleSymbol(stmbol) {
     let info = input.value;
@@ -46,7 +40,7 @@ const numPad = document.querySelector('.calc-numbers');
 
 numPad.addEventListener('click', event => {
 
-    let begValue = '';
+    let begValue = [];
     let finValue = '';
     let shortCutFirst = ' ';
     let shortCutLast = ' ';
@@ -87,61 +81,68 @@ numPad.addEventListener('click', event => {
 
 
             putSome(` + `);
-            evalCount=0;
+            evalCount = 0;
 
             break;
         case 'minus':
             putSome(` - `);
-            evalCount=0;
+            evalCount = 0;
             break;
         case 'div':
             if (input.value.length !== 0) {
                 putSome(` / `);
-                evalCount=0;
+                evalCount = 0;
 
             }
             break;
         case 'clean':
             input.value = '';
             evalCount = 0;
-            break;            
+            break;
         case 'equal':
             begValue = input.value.split(' ');
-            if(evalCount===0){
-            curValue = begValue.reverse();
-            curValue = curValue.slice(0, 2);
-            curValue = curValue.reverse();
-            curValue = curValue.join('');
+            // if(evalCount===0){
+            // curValue = begValue.reverse();
+            // curValue = curValue.slice(0, 2);
+            // curValue = curValue.reverse();
+            // curValue = curValue.join('');
             finValue = begValue.join('');
             tempEqual = eval(finValue);
-            evalCount=1;
+            if(tempEqual=== undefined){
+                tempEqual='';
+            }
+            // evalCount=1;
             input.value = '';
-                input.value += tempEqual
+            input.value += tempEqual;
             
-        }else{
-            input.value+=curValue;
-            begValue = input.value.split(' ');
-            finValue = begValue.join('');
-            tempEqual = eval(finValue);
-            evalCount=1;
-            input.value = '';
-            input.value += tempEqual
-        }        
+            
+            // }else{
+            //     input.value+=curValue;
+            //     begValue = input.value.split(' ');
+            //     finValue = begValue.join('');
+            //     tempEqual = eval(finValue);
+            //     evalCount=1;
+            //     input.value = '';
+            //     input.value += tempEqual
+            // }        
             break;
         case 'multiply':
             if (input.value.length !== 0) {
                 putSome(` * `);
-                evalCount=0;
+                evalCount = 0;
             }
 
             break;
         case 'sqrt':
+            
             begValue = input.value.split(' ');
+            if(begValue[begValue.length-1]!==''){
             input.value = '';
             finValue = Math.sqrt(begValue[begValue.length - 1]);
             begValue.splice(begValue.length - 1, 1, `${finValue}`);
             begValue = begValue.join(' ');
             input.value = begValue;
+            }
             break;
         case 'percent':
             begValue = input.value.split(' ');
