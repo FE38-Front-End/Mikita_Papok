@@ -1,36 +1,34 @@
 let input = document.getElementsByTagName('input')[0];
 let tempEqual = 0;
 let tempEqualTwo = 0;
+let evalCount = 0;
+let curValue = 0;
 const memoryBlock = document.querySelector('.calc-memory');
-
 const operations = {
     'plus': '+',
     'minus': '-',
     'div': '/',
     'multiply': '*'
 }
-
-function doubleOperation(string) {
-    let operationsCount=0;
-    let begValue=string.split(' ');
-    let finValue=begValue[begValue.length-2]
+function doubleOperation(string, symbol) {
+    let operationsCount = 0;
+    let begValue = string.split('');
+    let finValue = begValue[begValue.length - 1]
     console.log(finValue);
     for (i in operations) {
-        if (finValue.indexOf(operations[i]) === -1) {
-            operationsCount-=1;
+        if (finValue.indexOf(operations[i]) === -1 && finValue.indexOf(symbol) === -1) {
+            operationsCount -= 0;
         } else {
-            operationsCount+=1;
+            operationsCount += 1;
         }
-
     }
     return operationsCount;
-
 }
 
 
 function doubleSymbol(stmbol) {
     let info = input.value;
-    info = info.split(' ');
+    info = info.split('');
     let infoData = info[info.length - 1];
     if (infoData.indexOf(stmbol) === -1) {
         return 0;
@@ -47,6 +45,7 @@ function putSome(num) {
 const numPad = document.querySelector('.calc-numbers');
 
 numPad.addEventListener('click', event => {
+
     let begValue = '';
     let finValue = '';
     let shortCutFirst = ' ';
@@ -85,27 +84,56 @@ numPad.addEventListener('click', event => {
             putSome(0);
             break;
         case 'plus':
+
+
             putSome(` + `);
+            evalCount=0;
+
             break;
         case 'minus':
-            if(doubleOperation)
             putSome(` - `);
+            evalCount=0;
             break;
         case 'div':
-            if(doubleOperation(input.value)===0){
+            if (input.value.length !== 0) {
                 putSome(` / `);
+                evalCount=0;
+
             }
             break;
         case 'clean':
             input.value = '';
-            break;
+            evalCount = 0;
+            break;            
         case 'equal':
-            tempEqual = eval(input.value);
+            begValue = input.value.split(' ');
+            if(evalCount===0){
+            curValue = begValue.reverse();
+            curValue = curValue.slice(0, 2);
+            curValue = curValue.reverse();
+            curValue = curValue.join('');
+            finValue = begValue.join('');
+            tempEqual = eval(finValue);
+            evalCount=1;
+            input.value = '';
+                input.value += tempEqual
+            
+        }else{
+            input.value+=curValue;
+            begValue = input.value.split(' ');
+            finValue = begValue.join('');
+            tempEqual = eval(finValue);
+            evalCount=1;
             input.value = '';
             input.value += tempEqual
+        }        
             break;
         case 'multiply':
-            putSome(` * `);
+            if (input.value.length !== 0) {
+                putSome(` * `);
+                evalCount=0;
+            }
+
             break;
         case 'sqrt':
             begValue = input.value.split(' ');
@@ -129,6 +157,7 @@ numPad.addEventListener('click', event => {
             begValue = input.value.split(' ');
             input.value = '';
             begValue.splice(begValue.length - 1, 1);
+
             begValue = begValue.join(' ');
             input.value = begValue;
             break;
@@ -184,11 +213,11 @@ numPad.addEventListener('click', event => {
 
 memoryBlock.addEventListener('click', event => {
     let localValue = 0;
+
     const memory = event.target.dataset.type;
     switch (memory) {
         case 'ms':
             localStorage.setItem('mmr', eval(input.value));
-            console.log(localStorage);
             input.value = '';
             break;
         case 'mr':
@@ -202,7 +231,6 @@ memoryBlock.addEventListener('click', event => {
             localValue += eval(input.value);
             console.log(localValue);
             localStorage.removeItem('mmr');
-            console.log(localStorage);
             localStorage.setItem('mmr', localValue)
             break;
         case 'mMinus':
@@ -210,7 +238,6 @@ memoryBlock.addEventListener('click', event => {
             localValue -= eval(input.value);
             console.log(localValue);
             localStorage.removeItem('mmr');
-            console.log(localStorage);
             localStorage.setItem('mmr', localValue)
             break;
     }
