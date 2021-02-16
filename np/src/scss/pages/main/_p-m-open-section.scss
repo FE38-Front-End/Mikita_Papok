@@ -1,0 +1,8 @@
+.p-m-open-section{
+    @include flex(){
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    padding: 134px 0;
+}

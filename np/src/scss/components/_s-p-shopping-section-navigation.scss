@@ -1,0 +1,61 @@
+.s-p-navigation__component {
+    width: 7px;
+    height: 7px;
+    border-radius: 100px;
+    background: #8EC2F2;
+
+    @include screen-max(1455) {
+        display: none;
+    }
+
+    &:not(:first-child) {
+        margin-left: 3px;
+    }
+
+    &-mobile {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 0.2px;
+        margin-left: 3px;
+        &-1 {
+            color: #2091F9;
+        }
+
+        display: none;
+
+        @include screen-max(1455) {
+            display: block;
+
+        }
+    }
+}
+
+.s-p-shopping-section-navigation {
+    @include flex() {
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    ;
+
+    &-margin {
+        margin-top: 62px;
+    }
+}
+
+.s-p-navigation {
+    @include flex();
+
+    &-margin {
+        margin: 0 14px;
+    }
+
+    &-mobile {
+        display: none;
+    }
+
+}

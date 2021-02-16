@@ -1,0 +1,109 @@
+h3 {
+    @include h3-text(#252B42);
+
+    span {
+        color: grey;
+    }
+}
+
+h6 {
+    @include h6-text(#737373);
+}
+
+.f-p-product-inf-description-block {
+    justify-content: center;
+    margin-left: 43px;
+    &-buttons{
+        @include flex(){
+            flex-direction: row;
+        };
+        &__component{
+            &:not(:first-child){
+                margin-left: 9px;
+            }
+        }
+        &-margin{
+            margin-top: 41px;
+        }
+    }
+
+    &-score {
+        @include flex() {
+            align-items: center;
+
+        }
+
+        &-margin {
+            margin-top: 20px;
+        }
+
+        ;
+
+        &__component {
+            flex-shrink: 0;
+
+            &:last-child {
+                margin-left: 16.4px;
+            }
+        }
+
+        &__number {
+            @include h6-text(#DAB700);
+            margin-right: 6.4px;
+        }
+    }
+
+    &-cost {
+        @include flex();
+
+        &-margin {
+            margin-top: 26px;
+        }
+
+        &__component {
+            @include h3-text(#252B42);
+
+            &:last-child {
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 38px;
+                text-decoration-line: line-through;
+                color: #737373;
+                margin-left: 21px;
+            }
+        }
+    }
+
+    &-color {
+        &-margin{
+            margin-top: 35px;
+        }
+        span {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 28px;
+            letter-spacing: 0.2px;
+            color: #737373;
+        }
+    }
+    &-text{
+        h4{
+            @include h4-text(#252B42);
+            margin-top: 35px;
+        }
+        p{
+            margin-top: 4px;
+            min-width: 100%;
+            width: 331px;
+            @include normal-text(#737373);
+            span{
+                color: #2091F9;
+            }
+        }
+    }
+    
+}

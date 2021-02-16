@@ -1,0 +1,12 @@
+.sort-section__group{
+    @include screen-max(1455){
+        display: none;
+    
+    }
+}
+.sort-section{
+    @include screen-max(1455){
+        justify-content: center;
+        align-items: center;
+    }
+}

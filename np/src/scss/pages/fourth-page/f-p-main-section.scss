@@ -1,0 +1,8 @@
+.f-p-main-section{
+    background-color: #f9f9f9;
+    padding: 27px 140px 79px;
+    justify-content: center;
+    @include screen-max(1455){
+        padding: 0;
+    }
+}

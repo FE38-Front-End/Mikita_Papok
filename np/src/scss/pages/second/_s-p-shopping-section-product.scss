@@ -1,0 +1,13 @@
+.s-p-shopping-section-product{
+    &-margin{
+        margin-left: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+    &-line{
+        @include screen-max(1455){
+            
+        }
+    }
+    
+}

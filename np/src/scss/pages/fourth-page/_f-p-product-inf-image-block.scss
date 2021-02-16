@@ -1,0 +1,72 @@
+.f-p-product-inf-image-block{
+   @include flex(){
+       flex-direction: column;
+       align-items: center;
+   }
+    &__main-image{
+        width:683px ;
+        height: 902px;
+        background-image: url("../../../images/fourth-page/present-image.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        @include screen-max(1455){
+            width: 395px;
+            height: 477px;
+        }
+    }
+    &-mini{
+        @include flex(){
+            
+        };
+        &-margin{
+            margin-top: 47px;
+        }
+        
+        position: relative;
+        &__component{
+            width: 85px;
+            height: 72px;
+            background-size: cover;
+            background-position: center;
+            &:not(:first-child){
+                margin-left: 14px;
+            }
+            position: relative;
+            &-filter{
+                position: absolute;
+                background-color: #ffffff;
+                width: 85px;
+                height: 72px;
+                opacity: 0.6;
+            }
+            &-1{
+                background-image: url("../../../images/fourth-page/img-small-1.png");
+            }
+            &-2{
+                background-image: url("../../../images/fourth-page/img-small-2.png");
+            }
+            &-3{
+                background-image: url("../../../images/fourth-page/img-small-3.png");
+            }
+            &-4{
+                background-image: url("../../../images/fourth-page/img-small-4.png");
+                @include screen-max(1455){
+                    display: none;
+                }
+            }
+            &-5{
+                background-image: url("../../../images/fourth-page/img-small-5.png");
+                @include screen-max(1455){
+                    display: none;
+                }
+            }
+            &-6{
+                background-image: url("../../../images/fourth-page/img-small-6.png");
+                @include screen-max(1455){
+                    display: none;
+                }
+            }
+        }
+    }
+}

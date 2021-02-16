@@ -1,0 +1,14 @@
+
+.wrapper{
+    margin:auto;
+    width: 100%;
+    max-width: 1440px;
+    justify-content: center;   
+    @include screen-max(1455){
+        max-width: 100%;
+        
+    }
+}
+.section__title{
+    @include h3-text(#252B42);
+}

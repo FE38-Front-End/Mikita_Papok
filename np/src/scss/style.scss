@@ -1,0 +1,77 @@
+@import "helpers/variables.scss";
+@import "helpers/mixins.scss";
+@import "helpers/media-queries.scss";
+
+
+@import "layout/header.scss";
+@import "layout/navigation.scss";
+@import "layout/footer.scss";
+@import "layout/shift.scss";
+@import "layout/search-form.scss";
+@import "layout/radio-form.scss";
+
+
+@import "vendors/normalize.scss";
+
+
+@import "base/fonts.scss";
+@import "base/base.scss";
+
+
+@import "components/button.scss";
+@import "components/open-section__title.scss";
+@import "components/images.scss";
+@import "components/product-card.scss";
+@import "components/color-button.scss";
+@import "components/size-button.scss";
+@import "components/page-button.scss";
+@import "components/menu-section.scss";
+@import "components/radio-form.scss";
+@import "components/filter-section.scss";
+@import "components/checkbox-form.scss";
+@import "components/check-box.scss";
+@import "components/sort-section.scss";
+@import "components/sort-button.scss";
+@import "components/s-p-shopping-section-navigation.scss";
+@import "components/navigation-button.scss";
+@import "components/f-p-product-inf.scss";
+@import "components/f-p-page-button.scss";
+@import "components/f-p-menu-section.scss";
+
+@import "pages/main/main.scss";
+@import "pages/main/present-section.scss";
+@import "pages/main/p-m-open-section.scss";
+@import "pages/main/p-m-category-product-section.scss";
+@import "pages/main/p-m-featured-product-section.scss";
+@import "pages/main/p-m-latest-product.scss";
+@import "pages/main/our-block.scss";
+@import "pages/main/shop-on-instagram.scss";
+@import "pages/fourth-page/fourth-page.scss";
+@import "pages/fourth-page/f-p-main-section.scss";
+@import "pages/fourth-page/image-filter.scss";
+@import "pages/fourth-page/f-p-product-inf-image-block__main-image.scss";
+@import "pages/fourth-page/f-p-product-inf-image-block-mini.scss";
+@import "pages/fourth-page/f-p-product-inf-image-block.scss";
+@import "pages/fourth-page/f-p-product-inf-description-block.scss";
+@import "pages/fourth-page/f-p-shopping-section-category.scss";
+@import "pages/fourth-page/f-p-share-product-section.scss";
+@import "pages/fourth-page/f-p-discription-section.scss";
+@import "pages/fourth-page/f-p-other-product-section.scss";
+@import "pages/second/sort-section.scss";
+
+
+@import "pages/second/second-page.scss";
+@import "pages/second/s-p-main.scss";
+@import "pages/second/s-p-shopping-section.scss";
+@import "pages/second/s-p-shopping-section-sidebar.scss";
+@import "pages/second/s-p-shopping-section-product.scss";
+@import "pages/second/s-p-shopping-section-category.scss";
+@import "pages/second/s-p-brand-section.scss";
+@import "pages/second/_s-p-shopping-section-product-cards.scss";
+
+
+
+
+
+
+

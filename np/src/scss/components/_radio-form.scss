@@ -1,0 +1,42 @@
+.radiobox {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    &-margin{
+        margin-top: 24px;
+        &:not(:first-child){
+            margin-top:15px;
+        }
+    }
+
+
+    &__input {
+       
+
+        &:checked~.radiobox__icon {
+            background-color:  #2091F9;
+            border: none;
+        }
+
+
+    }
+
+    &__icon {
+        width: 25px;
+        height: 25px;
+        border: 2px solid #DCDCDC;
+        border-radius: 16px;
+        flex-shrink: 0;
+        padding: 5px;
+    }
+
+    &__text {
+        @include h6-text(#737373);
+        margin-left: 15px;
+    }
+
+    &__count {
+        @include h6-text(#737373);
+        margin-left: auto;
+    }
+}

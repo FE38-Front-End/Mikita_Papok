@@ -1,0 +1,78 @@
+.shop-on-instagram-card__img {
+    width: 349px;
+    height: 249px;
+    border-radius: 10px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+
+    &:not(:first-child) {
+        margin-left: 19px;
+        @include screen-max(1455) {
+            display: none;
+          }
+    }
+
+    &-1 {
+        background-image: url("../../../images/shop-on-instagram/shop-on-instagram1.jpg");
+    }
+
+    &-2 {
+        background-image: url("../../../images/shop-on-instagram/shop-on-instagram1.jpg");
+    }
+
+    &-3 {
+        background-image: url("../../../images/shop-on-instagram/shop-on-instagram1.jpg");
+    }
+
+    &-4 {
+        background-image: url("../../../images/shop-on-instagram/shop-on-instagram1.jpg");
+    }
+}
+
+.shop-on-instagram-card {
+    @include flex();
+    &-margin{
+        margin-top:69px;
+    }
+}
+
+
+.m-p-shop-on-instagram {
+    background-color: #313958;
+    padding: 49px 0 56px;
+    @include flex(){
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        @include h2-text(#ffffff);
+    }
+
+    &-nav {
+        @include flex(){
+            justify-content: center;
+            align-items: center;
+                    };
+        &-margin{
+            margin-top:45px;
+        }
+        &__component {
+            width: 15px;
+            height: 15px;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            
+
+            &:hover {
+                border: 1px solid #48AAFF;
+            }
+
+            &:not(:first-child){
+                margin-left: 4px;
+            }
+                
+            }
+        }
+    }

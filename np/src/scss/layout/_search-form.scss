@@ -1,0 +1,31 @@
+.search-form {
+
+    border: 1px solid #DCDCDC;
+    box-sizing: border-box;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    padding: 18px 15px 18px 23px;
+
+    @include flex() {
+        align-items: center;
+    }
+
+    &__image {
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    &__input {
+        border: none;
+
+        & ::placeholder {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;           
+            letter-spacing: 0.1px;
+            color: #737373;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.color-button {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+
+    &-1 {
+        background-color: #2091F9;
+    }
+
+    &-2 {
+        background-color: #2DC071;
+    }
+
+    &-3 {
+        background-color: #E77C40;
+    }
+
+    &-4 {
+        background-color: #252B42;
+    }
+    &:not(:first-child){
+        margin-left: 8px;
+    }
+}

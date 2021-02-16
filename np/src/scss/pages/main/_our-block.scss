@@ -1,0 +1,71 @@
+.our-block__title{
+    @include h3-text(#252B42);
+    &-margin{
+        margin-bottom: 60px;
+    }
+}
+.our-block__card{
+    background-color: white;
+    padding-bottom: 26px;
+    width: 331px;
+    &__cont{
+        padding:29px 0 26px 28px;
+    }
+    &__image{
+        background-image: url("../../../images/our-block/our-block__img1.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 202px;
+    }
+    &__date{
+        @include h5-text(#BDBDBD);
+    }
+    &__title{
+        @include h3-text(#252B42);
+        max-width: 240px;
+        align-self: center;
+        &-margin{
+            margin-top:12px;
+        }
+    }
+    &__text{
+        @include normal-text(#858585);
+        width: 100%;
+        max-width: 262px;
+        &-margin{
+            margin-top: 12px;
+        }
+    }
+    &__link{
+        &-margin{
+            margin-top: 28px;
+        }
+       &__component{
+           @include h5-text(#8EC2F2);
+           &:not(:first-child){
+               margin-left:16px;
+           }
+       } 
+    }
+    
+}
+.our-block{
+ background-color: #FFF8F8;
+ padding:44px 0 64px;
+ @include flex(){
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+}
+.our-block-cards{
+    @include grid(){
+        grid-template-columns: repeat(3,minmax(331px,331px));
+        grid-column-gap:40px;
+
+    }
+    @include screen-max(1455) {
+        display: flex;
+        flex-direction: column;
+      }
+}

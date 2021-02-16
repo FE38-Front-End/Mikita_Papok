@@ -1,0 +1,99 @@
+.navigation {
+    @include screen-max(1455) {
+      display: none;
+    }
+  
+    &__item {
+        text-decoration: none;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: #FFFFFF;
+        &:not(:first-child){
+            margin-left: 41px;
+        }
+        &-dark{
+            color:#737373;
+            &:first-child{
+                color:black;
+            }
+        }
+    }
+    &-margin{
+        margin: 0 126px 0 43px;
+        &-dark{
+            margin:10px 200px 0 30px;
+        }
+    }
+
+}
+
+.profile {
+
+    @include flex(){
+        align-items: center;
+    };
+
+    &__item {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: #FFFFFF;
+        &-dark{
+            color:#252B42;
+        }
+        &:not(:first-child){
+            margin-left: 35px;
+            
+        }
+        &:not(:last-child){
+            @include screen-max(1455) {
+                display: none;
+              }
+        }
+
+        &-first {
+            width: 56px;
+            height: 56px;
+            background: rgba(232, 232, 232, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 66px;
+            flex-shrink: 0;
+            padding: 10px;
+            @include screen-max(1455) {
+                display: none;
+              }
+            
+
+        }
+
+        &-fourth {
+            width: 56px;
+            height: 56px;
+            background: rgba(232, 232, 232, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 66px;
+            flex-shrink: 0;
+            padding: 15px;
+            @include screen-max(1455) {
+                margin-left: 90px;
+              }
+        }
+        
+
+    }
+}
+.mobile-version{
+    @include screen-max(1455) {
+        display: flex;
+        margin-left: 26px;
+      }
+}
