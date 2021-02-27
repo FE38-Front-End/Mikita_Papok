@@ -1,0 +1,26 @@
+.overtitle{
+    @include h3-text(#ffffff);
+    @include screen-max(1455){
+        @include h5-text(#ffffff);
+    }
+}
+.title{
+    @include h1-text(#ffffff);
+    @include screen-max(1455){
+        @include h2-text(#ffffff);
+    }
+}
+.undertitle{
+    @include normal-text(#ffffff);
+}
+.open-section__title{
+    @include flex(){
+        flex-direction: column;
+        align-items: center;
+    };
+    &-component{
+        &:not(:first-child){
+            margin-top:8px;
+        }
+    }
+}

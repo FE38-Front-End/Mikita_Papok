@@ -1,0 +1,16 @@
+
+main{
+    @include screen-max(1455){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        
+    }
+
+}
+.f-p-wrapper{
+    @include screen-max(1455){
+        width: 100%;
+    }
+}

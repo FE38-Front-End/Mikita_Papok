@@ -1,0 +1,31 @@
+.s-p-shopping-section-product-cards {
+    @include grid() {
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 40px;
+        grid-row-gap:45px;
+    }
+
+    &-margin{
+        margin-top: 40px;
+    }
+    &-line{
+        align-items:center;
+        @include grid(){
+            grid-template-columns: 1fr;
+            grid-row-gap: 10px;
+        };
+    }
+    @include screen-max(1455){
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+    }
+    &-line{
+        @include screen-max(1455){
+            display: flex;
+        }
+    }
+
+}

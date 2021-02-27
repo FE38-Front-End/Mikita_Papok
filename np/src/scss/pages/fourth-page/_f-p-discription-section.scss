@@ -1,0 +1,67 @@
+.f-p-discription-section{
+    &-margin{
+        margin-top: 68px;
+    }
+    &-menu{
+        @include flex();
+        width: 100%;
+        border-bottom: 3px solid #E4E4E4;
+        padding: 10px;
+        padding-left: 0px;
+        position: relative;
+        @include screen-max(1455){
+            width: 100%;
+            
+        }
+        &__component{
+            padding-left: 5px;
+            padding-right: 5px;
+            &:not(:first-child){
+                margin-left: 36px;
+                border: none;
+                &:active{
+                    color:#2091F9;
+                    border-bottom:  3px solid #2091F9;
+
+                }
+                
+            }
+            @include normal-text(#737373);
+            font-weight: bold;
+            &:first-child{
+                color:#2091F9;
+            }
+            border-bottom:  3px solid #2091F9;
+            position: absolute;
+            top: -8px;
+            &-2{
+                left:114px;
+            }
+            &-3{
+                left: 280px;
+                @include screen-max(1455){
+                    display: none;
+                }
+            }
+        }
+    }
+    &-text{
+        @include normal-text(#252B42);
+        max-width: 100%;
+        width: 707px;
+        &-margin{
+            margin-top: 36px;
+        }
+    }
+    ul{
+        margin-top: 35px;
+        h5{
+            @include h5-text(#252B42);
+        }
+        li{
+            @include normal-text(#252B42);
+        margin-top: 10px;
+    }
+            
+    }
+}

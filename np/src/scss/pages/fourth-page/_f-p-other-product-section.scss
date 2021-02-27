@@ -1,0 +1,39 @@
+.f-p-other-product-section{
+    background-color: #ffffff;
+    padding: 48px 133px 67px 158px;
+    h3{
+        @include h3-text(#252B42);
+    }
+    &-cards{
+        @include flex();
+        width: 1130px;
+        position: relative;
+        @include screen-max(1455){
+            width: 100%;
+        }
+        
+        &__button{
+            top: 25%;
+            right: 100%;
+            &-next{
+                left:99%;
+                top: 25%;
+            }
+        }
+        &__component{
+            &:not(:first-child){
+                margin-left: 20px;
+            }
+        }
+        &-margin{
+            margin-top: 43px;
+        }
+    }
+    
+    @include screen-max(1455){
+        align-content: center;
+    
+    
+    
+    }
+}

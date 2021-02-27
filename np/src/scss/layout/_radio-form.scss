@@ -1,0 +1,12 @@
+.radio-form {
+    width: 345px;
+    border: 1px solid #E8E8E8;
+    border-radius: 5px;
+    padding: 30px 35px;
+    &__title{
+        @include h5-text(#252B42);
+    }
+    &-margin{
+        margin-top:18px;
+    }
+}

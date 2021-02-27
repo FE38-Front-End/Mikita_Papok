@@ -1,0 +1,25 @@
+.page-button{
+    width: 41px;
+    height: 41px;
+    border-radius: 100px;
+    border:  0.695207px solid rgba(255, 255, 255, 0.4);
+    background: rgba(222, 222, 222, 0.2);
+    @include screen-max(1455) {
+        display: none;
+      }
+    &-margin{
+        margin-right: 33px;
+    }
+    &-next{
+        transform: rotate(180deg);
+        padding-top: 7px;
+        border:1px solid #48AAFF;
+        background-color: white;
+        &-margin{
+            margin-left: 28px;
+        }
+        &-direction{
+            path { fill: #48AAFF; }
+        }
+    }
+}

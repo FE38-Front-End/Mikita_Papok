@@ -1,0 +1,32 @@
+.f-p-page-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 15px;
+    left: -20px;
+    background-color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    &-next {
+        left: 560px;
+        background: #FFFFFF;
+        border: 1px solid #EAEAEA;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+}
+
+.f-p-way {
+    path {
+        fill: #BDBDBD;
+    }
+    &-turn{
+        transform: rotate(180deg);
+        path{
+            fill:#2091F9;
+        }
+
+    }
+}

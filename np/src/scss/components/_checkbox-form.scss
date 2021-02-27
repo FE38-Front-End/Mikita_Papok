@@ -1,0 +1,9 @@
+.checkbox-form{
+    
+    &__title{
+        @include h5-text(#252B42);
+        &-margin{
+            margin-bottom: 25px;
+        }
+    }
+}

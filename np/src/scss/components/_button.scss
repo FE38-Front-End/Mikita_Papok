@@ -1,0 +1,76 @@
+.shop-now {
+    width: 179px;
+    height: 56px;
+    background-color: white;
+    border: none;
+    font-family: Montserrat;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #2091F9;
+
+    &__margin {
+        margin-top: 31px;
+    }
+}
+
+.category-section__button {
+    padding: 15px 30px;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+}
+
+.shop-on-instagram__button {
+    padding: 18px 38px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+    color: #FFFFFF;
+    position: absolute;
+    top: 14px;
+    left: 17px;
+}
+
+.add-wish-button{
+    padding: 6px  12px;
+    background: #BDBDBD;
+    border: none;
+border-radius: 5px;
+    position: relative;
+    @include h6-text(#FFFFFF);
+    @include flex(){
+        align-items: center;
+    }
+    span{
+        margin-left: 11.2px;
+    }
+}
+.add-card-button{
+    background: #2091F9;
+border-radius: 5px;
+padding: 6PX 32PX;
+@include h6-text( #FFFFFF);
+border: none;
+}

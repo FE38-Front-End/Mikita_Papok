@@ -1,0 +1,19 @@
+.f-p-share-product-section{
+    &-margin{
+        margin-top: 22px;
+    }
+    &-links{
+        a{
+            padding: 0;
+        }
+        
+        &-margin{
+            margin-top: 13px;
+        }
+    }
+    h5{
+        @include h5-text(#737373);
+    }
+}
+
+    

@@ -1,0 +1,11 @@
+.s-p-shopping-section-sidebar {
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 380px;
+    padding: 19px 18px 24px 17px ;
+    @include screen-max(1455){
+        display: none;
+    }
+}

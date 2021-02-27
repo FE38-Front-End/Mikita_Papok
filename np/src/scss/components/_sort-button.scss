@@ -1,0 +1,45 @@
+.sort-button {
+    background: #FFFFFF;
+    border: 1px solid #DCDCDC;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px 17px;
+    @include flex();
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 0.1px;
+    color: #252B42;
+    &-margin{
+        margin-left: 18px;
+    }
+
+    &__updown {
+        display: flex;
+        flex-direction: column;
+        margin-left: 43px;
+        &-mobile{
+            margin-left: auto;
+        }
+
+        &-down {
+            transform: rotate(180deg);
+            margin-top: 5px;
+            &-mobile{
+                path{fill:white;}
+            }
+        }
+    }
+    &-mobile{
+        width: 304px;
+        background: rgba(0, 0, 0, 0.1);
+        color: white;
+        display: none;
+        @include screen-max(1455){
+            display: flex;
+            margin-top: 30px;
+        }
+    }
+}

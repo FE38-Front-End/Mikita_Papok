@@ -1,0 +1,45 @@
+header {
+    padding: 33px 60.5px 50.5px 67px;
+
+    @include screen-max(1455) {
+        
+    }
+
+    @include flex() {
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.mobile-version {
+    display: none;
+}
+.logo{
+    @include screen-max(1455) {
+        margin-right:auto;
+        
+      }
+  
+    
+   
+}
+.header-dark{
+    padding: 22px 44px 28px 46px;
+    @include flex(){
+        justify-content: center;
+        align-items: center;
+    }
+    border-bottom: 1px solid #E8E8E8;
+    @include screen-max(1455){
+                .navigation-dark{
+            display: none;
+        }
+        .mobile-version{
+            display: block;
+            path{
+                fill: black;
+            }
+        }
+    }
+}
