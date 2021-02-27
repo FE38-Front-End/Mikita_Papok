@@ -9,7 +9,7 @@
 
     &__image {
         height: 414px;
-        background-image: url("../../images/featured-section/featured-card-1.jpg");
+        background-image: url("/src/images/featured-section/featured-card-1.jpg");
         background-size: cover;
         background-position: center;
         border-radius: 10px;
@@ -26,7 +26,7 @@
             height: 38px;
             background: rgba(232, 232, 232, 0.46);
             border-radius: 44.7857px;
-            background-image: url("../../images/featured-section/favorite-mini.svg");
+            background-image: url("/src/images/featured-section/favorite-mini.svg");
             background-repeat: no-repeat;
             background-position: center;
             position: absolute;
@@ -63,10 +63,10 @@
         
         &__image{
             height: 180px;
-            background-image: url("../../images/latest-product/product-card-small1.jpg");
+            background-image: url("/src/images/latest-product/product-card-small1.jpg");
             flex-shrink: 0;
             &-xs{
-                background-image: url("../../images/second-page/main/s-p-product.jpg");
+                background-image: url("/src/images/second-page/main/s-p-product.jpg");
                 width: 210px;
                 height: 180px;
                 border-radius: 0%;

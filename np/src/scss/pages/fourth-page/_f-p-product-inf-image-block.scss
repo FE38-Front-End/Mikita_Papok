@@ -6,7 +6,7 @@
     &__main-image{
         width:683px ;
         height: 902px;
-        background-image: url("../../../images/fourth-page/present-image.png");
+        background-image: url("/src/images/fourth-page/present-image.png");
         background-size: cover;
         background-position: center;
         position: relative;
@@ -41,28 +41,28 @@
                 opacity: 0.6;
             }
             &-1{
-                background-image: url("../../../images/fourth-page/img-small-1.png");
+                background-image: url("/src/images/fourth-page/img-small-1.png");
             }
             &-2{
-                background-image: url("../../../images/fourth-page/img-small-2.png");
+                background-image: url("/src/images/fourth-page/img-small-2.png");
             }
             &-3{
-                background-image: url("../../../images/fourth-page/img-small-3.png");
+                background-image: url("/src/images/fourth-page/img-small-3.png");
             }
             &-4{
-                background-image: url("../../../images/fourth-page/img-small-4.png");
+                background-image: url("/src/images/fourth-page/img-small-4.png");
                 @include screen-max(1455){
                     display: none;
                 }
             }
             &-5{
-                background-image: url("../../../images/fourth-page/img-small-5.png");
+                background-image: url("/src/images/fourth-page/img-small-5.png");
                 @include screen-max(1455){
                     display: none;
                 }
             }
             &-6{
-                background-image: url("../../../images/fourth-page/img-small-6.png");
+                background-image: url("/src/images/fourth-page/img-small-6.png");
                 @include screen-max(1455){
                     display: none;
                 }
